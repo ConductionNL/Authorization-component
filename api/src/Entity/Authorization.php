@@ -11,6 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=AuthorizationRepository::class)
+ * @ORM\Table(name="authorization_table")
  */
 class Authorization
 {
