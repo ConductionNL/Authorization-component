@@ -157,6 +157,15 @@ class CommongroundApplicationAuthenticator extends AbstractGuardAuthenticator
             $algorithmManager
         );
 
+        if($jwsVerifier->verifyWithKey($jwt, $public, 0)){
+            echo "token is not valid";
+        }
+        if($creation<$maxAge){
+            echo "token is expired";
+        }
+        if(!$application->getHasAllAuthorizations()){
+            echo "application has insufficient rights";
+        }
         if($jwsVerifier->verifyWithKey($jwt, $public, 0) && $creation > $maxAge && $application->getHasAllAuthorizations()){
             return true;
         }
