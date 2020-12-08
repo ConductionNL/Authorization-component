@@ -20,8 +20,10 @@ jobs:
         steps:
             - uses: actions/checkout@v1
             - uses: actions/setup-node@v1
-            - name: Dump owner
+            - name: echo owner
               run: echo $(cut -d'/' -f1 <<< $GITHUB_REPOSITORY)
+            - name: Echo github ref
+              run: echo $GITHUB_REF
             - name: Login to DockerHub Registry
               id: containerregistry-login
               run: |
@@ -98,6 +100,9 @@ jobs:
                   echo 'IMAGES=$images' >> $GITHUB_ENV
             - name: Show all images
               run: docker images
+              
+
+              
             - if: steps.dockerhub-login.outputs.success == 'true' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/staging' || github.ref == 'refs/heads/development')
               name: Push to docker hub
               run: docker-compose push
