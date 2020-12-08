@@ -20,6 +20,8 @@ jobs:
         steps:
             - uses: actions/checkout@v1
             - uses: actions/setup-node@v1
+            - name: Dump owner
+              run: echo $(cut -d'/' -f1 <<< $GITHUB_REPOSITORY)
             - name: Install Newman
               run: npm install -g newman
             - name: Export release code
