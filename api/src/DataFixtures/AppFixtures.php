@@ -22,7 +22,7 @@ class AppFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        $jwk = json_decode(base64_decode($this->params->get("app_commonground_secret")), true);
+        $jwk = json_decode(base64_decode($this->params->get("app_commonground_secret_key")), true);
         $jwk = JWKFactory::createFromValues($jwk);
 
         $public = $jwk->toPublic();

@@ -248,6 +248,11 @@ spec:
                 secretKeyRef:
                   name: {{ template "fullname" . }}
                   key: app_user_key
+            - name: APP_COMMONGROUND_SECRET_KEY
+              valueFrom:
+                  secretKeyRef:
+                      name: {{ template "fullname" . }}
+                      key: app_commonground_secret_key
             - name: APP_URL
               {{- if and (eq $.Values.settings.env "prod") (eq $.Values.settings.type "component") }}
               value: https://{{ $.Values.settings.domain }}/api/{{ $.Values.settings.majorVersion }}/{{ $.Values.settings.subpath }}
