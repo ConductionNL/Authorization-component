@@ -87,6 +87,8 @@ jobs:
                   echo 'IMAGES=$images' >> $GITHUB_ENV
             - name: Show all images
               run: docker images
+            - name: echo Github Actor
+              run: echo $GITHUB_ACTOR
             - name: Login to DockerHub Registry
               id: containerregistry-login
               run: |
