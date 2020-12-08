@@ -8,12 +8,13 @@ parameters:
     env(APP_COMMONGROUND_ID): ""
     env(APP_COMMONGROUND_KEY): ""
     env(APP_COMMONGROUND_SECRET): ""
+    env(APP_COMMONGROUND_SECRET_KEY): ""
 
     common_ground.app.id: "%env(APP_COMMONGROUND_ID)%"
     app_commonground_id: "%env(APP_COMMONGROUND_ID)%"
     app_commonground_key: "%env(APP_COMMONGROUND_KEY)%"
     app_commonground_secret: "%env(APP_COMMONGROUND_SECRET)%"
-
+    app_commonground_secret_key: "%env(APP_COMMONGROUND_SECRET_KEY)%"
     # Application Parameters
     env(APP_ENV): "prod"
     env(APP_DEBUG):
@@ -315,6 +316,8 @@ twig:
         app_web: "%env(APP_WEB)%"
         app_internal: "%env(APP_INTERNAL)%"
         app_build_all_fixtures: "%env(APP_BUILD_ALL_FIXTURES)%"
+        app_commonground_secret_key: "%env(APP_COMMONGROUND_SECRET_KEY)%"
+
 
         # Security Details
         app_commonground_id: "%env(APP_COMMONGROUND_ID)%"
