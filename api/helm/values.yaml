@@ -3,21 +3,21 @@
 # Declare variables to be passed into your templates.
 
 settings:
-  registryBase: docker.io/conduction
-  projectName: pc
-  name: pc
-  title: Proto component commonground
+  registryBase: ghcr.io/conductionnl
+  projectName: ac
+  name: ac
+  title: Authorization-Component
   version: V1.0
   majorVersion: v1
-  id: 
-  description: 'Naast deze JSON rest API is er ook een [graphql](/graphql) interface beschikbaar.'
+  id: 0a179455-84fe-4d7d-a322-be414613d412
+  description: '&#039;Naast deze JSON rest API is er ook een [graphql](/graphql) interface beschikbaar.&#039;'
   type: component
   repro: https://github.com/ConductionNL/proto-component
-  demo: pc.zaakonline.nl
-  container: https://hub.docker.com/repository/docker/conduction/pc-php
+  demo: ac.zaakonline.nl
+  container: https://hub.docker.com/repository/docker/conduction/ac-php
   domain: conduction.nl
-  subdomain: pc
-  subpath: pc
+  subdomain: ac
+  subpath: ac
   subpathRouting: true
   organisationName: Conduction
   email: info@conduction.nl
@@ -55,7 +55,7 @@ security:
   applicationKey: "45c1a4b6-59d3-4a6e-86bf-88a872f35845"
   userKey: "79d5b14c-70ab-41fb-ac02-917e3288870b"
   authorisationProviderUser: https://uc.zuid-drecht.nl
-  authorisationProviderApplication: https://openzaak.dev.zuid-drecht.nl/authorizaties/api/v1
+  authorisationProviderApplication: ac
 
 
 php:
