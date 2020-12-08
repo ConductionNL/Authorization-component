@@ -2,8 +2,10 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Application;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Jose\Component\KeyManagement\JWKFactory;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
@@ -20,11 +22,19 @@ class AppFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        // Lets make sure we only run these fixtures on larping enviroment
-        if (strpos($this->params->get('app_domain'), 'conduction.nl') == false) {
-            return false;
-        }
+        $jwk = json_decode(base64_decode($this->params->get("app_commonground_secret")), true);
+        $jwk = JWKFactory::createFromValues($jwk);
 
+        $public = $jwk->toPublic();
+
+
+        $application = new Application();
+        $application->setLabel('Admin application');
+        $application->setHasAllAuthorizations(true);
+        $application->setClientIds([$this->params->get('app_id')]);
+        $application->setPublicKey($public->jsonSerialize());
+
+        $manager->persist($application);
         $manager->flush();
     }
 }

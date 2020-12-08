@@ -32,9 +32,9 @@ security:
             #    check_path: app_user_login   
             guard:
                 authenticators:
-                    - Conduction\CommonGroundBundle\Security\CommongroundApplicationAuthenticator
+                    - App\Security\CommongroundApplicationAuthenticator
                     - Conduction\CommonGroundBundle\Security\CommongroundUserAuthenticator
-                entry_point: Conduction\CommonGroundBundle\Security\CommongroundApplicationAuthenticator
+                entry_point: App\Security\CommongroundApplicationAuthenticator
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

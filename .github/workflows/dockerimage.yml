@@ -88,10 +88,10 @@ jobs:
             - name: Show all images
               run: docker images
             - name: Login to DockerHub Registry
-              id: dockerhub-login
+              id: containerregistry-login
               run: |
-                  if [ "${{ secrets.DOCKERHUB_PASSWORD }}" != "" ] && [ "${{ secrets.DOCKERHUB_USERNAME }}" != "" ]; then
-                    echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+                  if [ "${{ secrets.CR_PAT }}" != "" ]; then
+                    echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
                     echo "##[set-output name=success;]true"
                   else
                     echo "##[set-output name=success;]false"
