@@ -5,17 +5,16 @@ parameters:
     # You should not need to change this value.
 
     # Security Details
-    env(APP_COMMONGROUND_ID): ""
-    env(APP_COMMONGROUND_KEY): ""
+    env(APP_COMMONGROUND_ID): "d4bb1810-8358-4372-98db-6c7bd2fb370c"
+    env(APP_COMMONGROUND_KEY): "d4bb1810-8358-4372-98db-6c7bd2fb370c"
     env(APP_COMMONGROUND_SECRET): ""
     env(APP_COMMONGROUND_SECRET_KEY): ""
 
     common_ground.app.id: "%env(APP_COMMONGROUND_ID)%"
     app_commonground_id: "%env(APP_COMMONGROUND_ID)%"
-    app_commonground_key: "%env(APP_COMMONGROUND_KEY)%"
     app_commonground_secret: "%env(APP_COMMONGROUND_SECRET)%"
     app_commonground_secret_key: "%env(APP_COMMONGROUND_SECRET_KEY)%"
-    
+
     # Application Parameters
     env(APP_ENV): "prod"
     env(APP_DEBUG):
@@ -164,7 +163,7 @@ parameters:
     env(APP_COMMONGROUND_STUF_LOCATION): "https://stuf.%env(APP_DOMAIN)%"
     env(APP_COMMONGROUND_STUF_APIKEY): "%env(APP_COMMONGROUND_KEY)%"
 
-    common_ground.components:
+    components:
         be:
             location: "%env(APP_COMMONGROUND_BE_LOCATION)%"
             auth: "username-password"
@@ -262,37 +261,37 @@ parameters:
     common_ground.oas.type: service
     common_ground.oas.host: irc.zaakonline.nl
     common_ground.oas.servers:
-        -   description: Demo Omgeving
-            url: "http://proto.demo.common-ground.dev"
+        - description: Demo Omgeving
+          url: "http://proto.demo.common-ground.dev"
     common_ground.oas.externalDocs:
-        -   description: OAS Documentatie
-            url: "http://proto.demo.common-ground.dev"
+        - description: OAS Documentatie
+          url: "http://proto.demo.common-ground.dev"
     common_ground.oas.developers:
-        -   name: Conduction
-            url: https://github.com/ConductionNL
-            email: info@conduction.nl
-        -   name: Gemeente "s-Hertogenbosch
-            url: https://github.com/gemeenteshertogenbosch
-            email: info@s-hertogenbosch.nl/
-        -   name: Gemeente Utrecht
-            url: https://github.com/GemeenteUtrecht
-            email: info@utrecht.nl
+        - name: Conduction
+          url: https://github.com/ConductionNL
+          email: info@conduction.nl
+        - name: Gemeente "s-Hertogenbosch
+          url: https://github.com/gemeenteshertogenbosch
+          email: info@s-hertogenbosch.nl/
+        - name: Gemeente Utrecht
+          url: https://github.com/GemeenteUtrecht
+          email: info@utrecht.nl
     common_ground.oas.builds:
-        -   name: travis
-            logo: https://travis-ci.org/api-platform/core.svg?branch=master
-            url: https://travis-ci.org/api-platform/core
-        -   name: appveyor
-            logo: https://ci.appveyor.com/api/projects/status/grwuyprts3wdqx5l?svg=true
-            url: https://ci.appveyor.com/project/dunglas/dunglasapibundle
-        -   name: codecov
-            logo: https://codecov.io/gh/api-platform/core/branch/master/graph/badge.svg
-            url: https://codecov.io/gh/api-platform/core
-        -   name: SensioLabsInsight
-            logo: https://insight.sensiolabs.com/projects/92d78899-946c-4282-89a3-ac92344f9a93/mini.png
-            url: https://insight.sensiolabs.com/projects/92d78899-946c-4282-89a3-ac92344f9a93
-        -   name: Scrutinizer Code Quality
-            logo: https://scrutinizer-ci.com/g/api-platform/core/badges/quality-score.png?b=master
-            url: https://scrutinizer-ci.com/g/api-platform/core/?branch=master
+        - name: travis
+          logo: https://travis-ci.org/api-platform/core.svg?branch=master
+          url: https://travis-ci.org/api-platform/core
+        - name: appveyor
+          logo: https://ci.appveyor.com/api/projects/status/grwuyprts3wdqx5l?svg=true
+          url: https://ci.appveyor.com/project/dunglas/dunglasapibundle
+        - name: codecov
+          logo: https://codecov.io/gh/api-platform/core/branch/master/graph/badge.svg
+          url: https://codecov.io/gh/api-platform/core
+        - name: SensioLabsInsight
+          logo: https://insight.sensiolabs.com/projects/92d78899-946c-4282-89a3-ac92344f9a93/mini.png
+          url: https://insight.sensiolabs.com/projects/92d78899-946c-4282-89a3-ac92344f9a93
+        - name: Scrutinizer Code Quality
+          logo: https://scrutinizer-ci.com/g/api-platform/core/badges/quality-score.png?b=master
+          url: https://scrutinizer-ci.com/g/api-platform/core/?branch=master
 
 twig:
     globals:
@@ -342,6 +341,7 @@ twig:
         # Security Details
         app_commonground_id: "%env(APP_COMMONGROUND_ID)%"
         app_commonground_secret: "%env(APP_COMMONGROUND_SECRET)%"
+        app_commonground_secret_key: "%env(APP_COMMONGROUND_SECRET_KEY)%"
 
         # Organisations Parameters
         google_tag_manager_id: "%env(GOOGLE_TAG_MANAGER_ID)%"

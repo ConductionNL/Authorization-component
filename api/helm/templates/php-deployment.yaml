@@ -39,76 +39,76 @@ spec:
                         name: dependencies
                         readOnly: true
                   env:
-              - name: JWT_SECRET_KEY
-                value: '%kernel.project_dir%/config/jwt/private.pem'
-              - name: JWT_PUBLIC_KEY
-                value: '%kernel.project_dir%/config/jwt/public.pem'
-              - name: JWT_PASSPHRASE
-                value: 'bafe1dc254b45471754c221081f874aa'
-              - name: APP_ENV
-                value: 'prod'
-              - name: TRUSTED_HOSTS
-                valueFrom:
-                    configMapKeyRef:
-                        name: {{ template "fullname" . }}
-                        key: trusted-hosts
-              - name: TRUSTED_PROXIES
-                valueFrom:
-                    configMapKeyRef:
-                        name: {{ template "fullname" . }}
-                        key: trusted-proxies
-              - name: APP_VERSION
-                valueFrom:
-                    configMapKeyRef:
-                        name: {{ template "fullname" . }}
-                        key: app-version
-              - name: APP_DEBUG
-                valueFrom:
-                    configMapKeyRef:
-                        name: {{ template "fullname" . }}
-                        key: debug
-              - name: APP_CACHE
-                valueFrom:
-                    configMapKeyRef:
-                        name: {{ template "fullname" . }}
-                        key: cache
-              - name: DATABASE_URL
-                valueFrom:
-                    secretKeyRef:
-                        name: {{ template "fullname" . }}
-                        key: database-url
-              - name: CORS_ALLOW_ORIGIN
-                valueFrom:
-                    configMapKeyRef:
-                        name: {{ template "fullname" . }}
-                        key: app-corsAllowOrigin
-              - name: APP_APPLICATION_KEY
-                valueFrom:
-                    secretKeyRef:
-                        name: {{ template "fullname" . }}
-                        key: app_application_key
-            {{ if .Values.redis.enabled }}
-              - name: REDIS_HOST
-                valueFrom:
-                    configMapKeyRef:
-                        name: {{ template "fullname" . }}
-                        key: redis-host
-              - name: REDIS_PORT
-                valueFrom:
-                    configMapKeyRef:
-                        name: {{ template "fullname" . }}
-                        key: redis-port
-            {{- end }}
-              - - name: APP_COMMONGROUND_SECRET_KEY
-                valueFrom:
-                    secretKeyRef:
-                        name: {{ template "fullname" . }}
-                        key: app_commonground_secret_key
-              - name: APP_URL
-                value: https://{{ $.Values.ingress.domain }}/{{ $.Values.ingress.path }}
-          resources:
-{{ toYaml .Values.resources | indent 12 }}
-    {{- if .Values.nodeSelector }}
-      nodeSelector:
-{{ toYaml .Values.nodeSelector | indent 8 }}
-    {{- end }}
+                      - name: JWT_SECRET_KEY
+                        value: '%kernel.project_dir%/config/jwt/private.pem'
+                      - name: JWT_PUBLIC_KEY
+                        value: '%kernel.project_dir%/config/jwt/public.pem'
+                      - name: JWT_PASSPHRASE
+                        value: 'bafe1dc254b45471754c221081f874aa'
+                      - name: APP_ENV
+                        value: 'prod'
+                      - name: TRUSTED_HOSTS
+                        valueFrom:
+                            configMapKeyRef:
+                                name: {{ template "fullname" . }}
+                                key: trusted-hosts
+                      - name: TRUSTED_PROXIES
+                        valueFrom:
+                            configMapKeyRef:
+                                name: {{ template "fullname" . }}
+                                key: trusted-proxies
+                      - name: APP_VERSION
+                        valueFrom:
+                            configMapKeyRef:
+                                name: {{ template "fullname" . }}
+                                key: app-version
+                      - name: APP_DEBUG
+                        valueFrom:
+                            configMapKeyRef:
+                                name: {{ template "fullname" . }}
+                                key: debug
+                      - name: APP_CACHE
+                        valueFrom:
+                            configMapKeyRef:
+                                name: {{ template "fullname" . }}
+                                key: cache
+                      - name: DATABASE_URL
+                        valueFrom:
+                            secretKeyRef:
+                                name: {{ template "fullname" . }}
+                                key: database-url
+                      - name: CORS_ALLOW_ORIGIN
+                        valueFrom:
+                            configMapKeyRef:
+                                name: {{ template "fullname" . }}
+                                key: app-corsAllowOrigin
+                      - name: APP_APPLICATION_KEY
+                        valueFrom:
+                            secretKeyRef:
+                                name: {{ template "fullname" . }}
+                                key: app_application_key
+                    {{ if .Values.redis.enabled }}
+                      - name: REDIS_HOST
+                        valueFrom:
+                            configMapKeyRef:
+                                name: {{ template "fullname" . }}
+                                key: redis-host
+                      - name: REDIS_PORT
+                        valueFrom:
+                            configMapKeyRef:
+                                name: {{ template "fullname" . }}
+                                key: redis-port
+                    {{- end }}
+                      - name: APP_COMMONGROUND_SECRET_KEY
+                        valueFrom:
+                            secretKeyRef:
+                                name: {{ template "fullname" . }}
+                                key: app_commonground_secret_key
+                      - name: APP_URL
+                        value: https://{{ $.Values.ingress.domain }}/{{ $.Values.ingress.path }}
+                  resources:
+          {{ toYaml .Values.resources | indent 12 }}
+          {{- if .Values.nodeSelector }}
+            nodeSelector:
+      {{ toYaml .Values.nodeSelector | indent 8 }}
+  {{- end }}

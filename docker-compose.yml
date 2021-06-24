@@ -79,6 +79,7 @@ services:
     build:
       context: ./api
       target: api_platform_nginx
+      dockerfile: Dockerfile-nginx
       <<: *cache
     depends_on:
       - php
@@ -93,25 +94,6 @@ services:
       - "80:80"
     environment:
       - NGINX_HOST=php
-
-  cache-proxy:
-    &varnish
-    image: ${CONTAINER_REGISTRY_BASE}/${CONTAINER_PROJECT_NAME}-varnish:${APP_ENV}
-    build:
-      context: ./api
-      target: api_platform_varnish
-      <<: *cache
-    depends_on:
-      - api
-      - php
-    volumes:
-      - ./api/docker/varnish/conf:/usr/local/etc/varnish:rw,cached
-    tmpfs:
-      - /usr/local/var/varnish:exec
-    ports:
-      - "81:80"
-    environment:
-      - BACKENDS=php
 
         # nlx-outway:
         #   image: ${CONTAINER_REGISTRY_BASE}/${CONTAINER_PROJECT_NAME}-nlx-outway:${APP_ENV}
@@ -185,8 +167,8 @@ services:
         #db:
         #  image: postgres:10-alpine
         #  environment:
-        #    - POSTGRES_DB=api
-        #    - POSTGRES_USER=api-platform
+      #    - POSTGRES_DB=api
+      #    - POSTGRES_USER=api-platform
       # You should definitely change the password in production
   #    - POSTGRES_PASSWORD=!ChangeMe!
   #  volumes:
@@ -237,4 +219,3 @@ volumes:
   db-data: {}
   db-mysql: {}
   nlx-data-2: {}
-
