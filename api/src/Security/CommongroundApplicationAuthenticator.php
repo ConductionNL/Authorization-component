@@ -156,7 +156,7 @@ class CommongroundApplicationAuthenticator extends AbstractGuardAuthenticator
         $jwsVerifier = new JWSVerifier(
             $algorithmManager
         );
-
+        
         if($jwsVerifier->verifyWithKey($jwt, $public, 0) && $creation > $maxAge && $application->getHasAllAuthorizations()){
             return true;
         }
