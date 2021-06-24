@@ -3,13 +3,13 @@ info:
   title: ''
   description: |-
     API Details
-    - Reference: Authorization Component
+    - Reference: authorization-component
     - Enviroment: dev
     - Version: V1.0
-    - Repository: [online](https://github.com/ConductionNL/Authorization-Component) / [zip](https://github.com/ConductionNL/Authorization-Component/archive/master.zip)
-    - Datamodel: [postman](schema/Authorization Component.postman_collection.json) / [oas](schema/openapi.yaml) / [pdf](schema/datamodel.pdf) / [modelio (zip)](schema/Datamodel_Modelio.zip) 
+    - Repository: [online](https://github.com/ConductionNL/authorization-component) / [zip](https://github.com/ConductionNL/authorization-component/archive/master.zip)
+    - Datamodel: [postman](schema/authorization-component.postman_collection.json) / [oas](schema/openapi.yaml) / [pdf](schema/datamodel.pdf) / [modelio (zip)](schema/Datamodel_Modelio.zip) 
 
-    Authorization-Component...
+    authorization-component...
   version: V1.0
 servers:
   -
