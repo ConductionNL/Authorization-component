@@ -2,7 +2,7 @@ annotations:
     artifacthub.io/containsSecurityUpdates: "true"
 apiVersion: v2
 appVersion: V1.0
-description: 'Authorization-Component...'
+description: 'authorization-component...'
 name: authorization-component
 version: 1.0.0
 home: https://www.conduction.nl
