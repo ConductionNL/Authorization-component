@@ -1,13 +1,14 @@
+{# Read https://docs.italia.it/italia/developers-italia/publiccodeyml-en/en/master/schema.core.html for the complete standard#}
 publiccodeYmlVersion: "0.2"
 
-name: Authorization Component
+name: {{ app_name }}
 applicationSuite: commonground
-url: "https://github.com/ConductionNL/Authorization-Component"
-landingURL: "authorization.zuid-drecht.nl"
+url: "{{ app_repro }}"
+landingURL: "{{ app_demo }}"
 isBasedOn: "https://github.com/ConductionNL/Proto-component-commonground.git"
-softwareVersion: "V1.0"
-releaseDate: "2021-24-06"
-logo: https://conductionnl.github.io/images/conduction_avatar_blue_on_transparant.svg
+softwareVersion: "{{ app_version }}"
+releaseDate: "{{ "now"|date("Y-d-m") }}"
+logo: {{ app_logo }}
 monochromeLogo: img/logo-mono.svg
 
 inputTypes:
@@ -40,7 +41,7 @@ usedBy:
     - Gemeente Hoorn
 
 
-roadmap: "https://github.com/ConductionNL/Authorization-Component/blob/master/ROADMAP.md"
+roadmap: "{{ app_repro }}/blob/master/ROADMAP.md"
 
 developmentStatus: development
 
@@ -69,8 +70,8 @@ description:
         #          on multiple rows. You should note what the software
         #          is and why one should need it.
 
-        documentation: "https://github.com/ConductionNL/Authorization-Component/blob/master/README.md"
-        apiDocumentation: "authorization.zuid-drecht.nl"
+        documentation: "{{ app_repro }}/blob/master/README.md"
+        apiDocumentation: "{{ app_demo }}"
 #
 #    features:
 #       - Very important feature
@@ -119,5 +120,5 @@ dependsOn:
 
 installations:
     - type: helm
-      url: "https://raw.githubusercontent.com/ConductionNL/Authorization-Component/master/api/helm/"
+      url: "https://raw.githubusercontent.com/{{ app_repro|trim('https://github.com', 'left') }}/master/api/helm/"
 

@@ -1,12 +1,10 @@
-annotations:
-    artifacthub.io/containsSecurityUpdates: "true"
-apiVersion: v2
-appVersion: V1.0
-description: 'Authorization-Component...'
-name: authorization-component
-version: 1.0.0
-home: https://www.conduction.nl
-icon: https://conductionnl.github.io/images/conduction_avatar_blue_on_transparant.svg
+apiVersion: v1
+appVersion: {{ app_version }}
+description: '{{ app_description }}'
+name: {{ app_name|replace({' ': '-'})|lower }}
+version: 0.1.0
+home: {{ app_home }}
+icon: {{ app_logo }}
 sources:
     - https://commonground.conduction.nl/
     - https://www.commonground.nl/
@@ -25,7 +23,3 @@ dependencies:
       repository: https://charts.bitnami.com/bitnami
       version: 10.1.1
       condition: postgresql.enabled
-    - name: redis
-      repository: https://charts.bitnami.com/bitnami
-      version: 12.7.7
-      condition: redis.enabled

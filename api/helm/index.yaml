@@ -3,10 +3,10 @@ entries:
   ac:
   - apiVersion: v1
     appVersion: V1.0
-    created: "2020-12-08T15:39:18.8606174Z"
+    created: "2021-06-24T09:23:15.383808Z"
     description: '&#039;Naast deze JSON rest API is er ook een [graphql](/graphql)
       interface beschikbaar.&#039;'
-    digest: bcd0d8a43ec55deb0cf8901b5583cff74ad7b3dc2d5d4ac978161e96d764df7a
+    digest: fc340f46ad6534899c7d318f9b71316d812a9ba5838d5ac471e8ebe7318ebb85
     home: ac.zaakonline.nl
     icon: ac.zaakonline.nl
     name: ac
@@ -18,7 +18,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 11.10.0
-    created: "2020-12-08T15:39:18.8770334Z"
+    created: "2021-06-24T09:23:15.4225111Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -47,4 +47,4 @@ entries:
     urls:
     - charts/postgresql-10.1.1.tgz
     version: 10.1.1
-generated: "2020-12-08T15:39:18.8456124Z"
+generated: "2021-06-24T09:23:15.3028594Z"
