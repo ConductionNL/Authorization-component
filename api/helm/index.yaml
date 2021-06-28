@@ -5,7 +5,7 @@ entries:
       artifacthub.io/containsSecurityUpdates: "true"
     apiVersion: v2
     appVersion: V1.0
-    created: "2021-06-25T14:06:43.1925409Z"
+    created: "2021-06-28T07:51:33.0444895Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -16,7 +16,7 @@ entries:
       repository: https://charts.bitnami.com/bitnami
       version: 12.7.7
     description: authorization-component...
-    digest: ed66cdee016293e19dafe203187fac61e0f80c79714a152a34cb570f49661384
+    digest: 7fcbd6e0785744e7f1c85bcb926c5a9cadcf667f88743ea4be4952cdd4372db0
     home: https://www.conduction.nl
     icon: https://conductionnl.github.io/images/conduction_avatar_blue_on_transparant.svg
     keywords:
@@ -41,7 +41,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 11.10.0
-    created: "2021-06-25T14:06:43.2213961Z"
+    created: "2021-06-28T07:51:33.1430203Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -75,7 +75,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 6.0.11
-    created: "2021-06-25T14:06:43.2504834Z"
+    created: "2021-06-28T07:51:33.2515818Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -104,4 +104,4 @@ entries:
     urls:
     - charts/redis-12.7.7.tgz
     version: 12.7.7
-generated: "2021-06-25T14:06:43.1434074Z"
+generated: "2021-06-28T07:51:32.8612206Z"
