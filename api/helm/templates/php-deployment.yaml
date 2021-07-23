@@ -105,7 +105,10 @@ spec:
                                 name: {{ template "fullname" . }}
                                 key: app_commonground_secret_key
                       - name: APP_URL
-                        value: https://{{ $.Values.ingress.domain }}/{{ $.Values.ingress.path }}
+                        valueFrom:
+                            configMapKeyRef:
+                                key: url
+                                name: {{ template "fullname" . }}
                   resources:
           {{ toYaml .Values.resources | indent 12 }}
           {{- if .Values.nodeSelector }}
